@@ -47,6 +47,7 @@ array_push($movieList, $evilDeadR, $interviewVampire);
 
             <h1 class="text-center text-light mb-3">OOP MOVIES EXERCISE</h1>
 
+            <!-- Bonus 2: LAYOUT TO PRINT MOVIE CARDS ON SCREEN -->
             <?php foreach ($movieList as $movie) : ?>
 
                 <div class="col-6">

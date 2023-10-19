@@ -21,7 +21,7 @@ class Movie
         return $this->title;
     }
 
-    // METHOD TO ADD NEW GENRES
+    //Bonus 1: METHOD TO ADD NEW GENRES
     public function addGenre($newGenre)
     {
         // ADD THE NEW GENRE TO THE GENRES ARRAY $genres
