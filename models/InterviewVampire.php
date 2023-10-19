@@ -1,9 +1,9 @@
 <?php
 
-// NEW MOVIE OBJECT 2
+// NEW MOVIE CLASS ISTANCE 2
 $interviewVampire = new Movie('Interview with the Vampire');
 
-// VARIABLES DECLARATION
+// ATTRIBUTES DECLARATION
 $interviewVampire->year = 1994;
 $interviewVampire->poster = 'https://www.themoviedb.org/t/p/original/izvCmmBjUJsSyfeObxtZd4hczUk.jpg';
 $interviewVampire->addGenre('Drama');
