@@ -17,7 +17,7 @@ mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi i
 // DEFINE A NEW CLASS
 include __DIR__ . '/classes/movie.php';
 
-// CREATES NEW OBJECTS
+// CREATES NEW CLASS ISTANCES
 include __DIR__ . '/models/EvilDeadRise.php';
 include __DIR__ . '/models/InterviewVampire.php';
 
