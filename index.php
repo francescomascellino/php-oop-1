@@ -18,7 +18,7 @@ mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi i
 include __DIR__ . '/classes/movie.php';
 
 // CREATES NEW OBJECTS
-include __DIR__ . '/models/EvilDeadRising.php';
+include __DIR__ . '/models/EvilDeadRise.php';
 include __DIR__ . '/models/InterviewVampire.php';
 
 // INCLUDES MOVIES ARRAY
@@ -40,17 +40,19 @@ array_push($movieList, $evilDeadR, $interviewVampire);
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
 </head>
 
-<body>
+<body class="bg-dark">
 
     <div class="container">
         <div class="row flex-row my-3">
+
+            <h1 class="text-center text-light mb-3">OOP MOVIES EXERCISE</h1>
 
             <?php foreach ($movieList as $movie) : ?>
 
                 <div class="col-6">
 
                     <div class="card shadow">
-                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <img src="<?= $movie->poster ?>" class="card-img-top" alt="<?= $movie->title ?>">
 
                         <div class="card-body">
                             <h5 class="card-title mb-3"><?= $movie->title ?></h5>

@@ -5,6 +5,7 @@ class Movie
 {
     public $title = null;
     public $year;
+    public $poster;
     public $genres = [];
     public $genresList;
 
