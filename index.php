@@ -1,11 +1,12 @@
 <!-- 
 Oggi pomeriggio ripassate i primi concetti di classe, variabili e metodi d’istanza che abbiamo visto stamattina e create un file index.php in cui:
-è definita una classe ‘Movie’ => all’interno della classe sono dichiarate delle variabili d’istanza => all’interno della classe è definito un costruttore => all’interno della classe è definito almeno un metodo
-vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
+è definita una classe ‘Movie’ => all’interno della classe sono dichiarate delle variabili d’istanza => all’interno della classe è definito un costruttore => all’interno della classe è definito almeno un metodo ✔
 
-Bonus 1: Modificare la classe Movie in modo che accetti piú di un genere.
+vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà ✔
 
-Bonus 2: Creare un layout completo per stampare a schermo una lista di movies.
+Bonus 1: Modificare la classe Movie in modo che accetti piú di un genere. ✔
+
+Bonus 2: Creare un layout completo per stampare a schermo una lista di movies. ✔
 
 Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi file e cartelle. Possiamo ad esempio organizzare il codice
 creando un file dedicato ai dati (tipo le array di oggetti) che potremmo chiamare db.php
@@ -20,7 +21,8 @@ class Movie
 {
     public $title = null;
     public $year;
-    public $genre = [];
+    public $genres = [];
+    public $genresList;
 
     /**
      * Constructor
@@ -39,7 +41,10 @@ class Movie
     // Metodo per inserire più di un genere all'interno dell'oggetto
     public function addGenre($newGenre)
     {
-        array_push($this->genre, $newGenre);
+        // Aggiunge i generi all'array dei generi
+        array_push($this->genres, $newGenre);
+        //crea anche una stringa di generi per la stampa in pagina
+        $this->genresList = implode(", ", $this->genres);
     }
 }
 
@@ -85,16 +90,22 @@ array_push($movieList, $evilDeadR, $interviewVampire);
         <div class="row flex-row my-3">
 
             <?php foreach ($movieList as $movie) : ?>
+
                 <div class="col-6">
-                    <div class="card">
+
+                    <div class="card shadow">
                         <!-- <img src="..." class="card-img-top" alt="..."> -->
+
                         <div class="card-body">
                             <h5 class="card-title mb-3"><?= $movie->title ?></h5>
                             <p class="mb-1"><strong>Anno: </strong><?= $movie->year ?></p>
-                            <p class="mb-1"><strong>Genere: </strong><?= implode(", ", $movie->genre) ?></p>
+                            <p class="mb-1"><strong>Genere: </strong><?= $movie->genresList ?></p>
                         </div>
+
                     </div>
+
                 </div>
+
             <?php endforeach ?>
 
         </div>
