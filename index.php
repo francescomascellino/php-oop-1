@@ -30,13 +30,35 @@ class Movie
         $this->title = $movieTitle;
     }
 
+    // Define a method
     public function showTitle()
     {
         return $this->title;
     }
+
+    // Metodo per inserire più di un genere all'interno dell'oggetto
+    public function addGenre($newGenre)
+    {
+        array_push($this->genre, $newGenre);
+    }
 }
 
-
+// Nuovo oggetto  Movie 1
 $evilDeadR = new Movie('Evil Dead Rising');
 
-var_dump($evilDeadR->showTitle());
+// Dichiarazione variabili
+$evilDeadR->year = 2023;
+$evilDeadR->addGenre('Horror');
+$evilDeadR->addGenre('Trhriller');
+
+var_dump($evilDeadR);
+
+// Nuovo oggetto  Movie 1
+$interviewVampire = new Movie('Interview with the Vampire');
+
+// Dichiarazione variabili
+$interviewVampire->year = 1994;
+$interviewVampire->addGenre('Drama');
+$interviewVampire->addGenre('Horror');
+
+var_dump($interviewVampire);
