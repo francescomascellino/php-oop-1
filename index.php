@@ -51,7 +51,7 @@ $evilDeadR->year = 2023;
 $evilDeadR->addGenre('Horror');
 $evilDeadR->addGenre('Trhriller');
 
-var_dump($evilDeadR);
+// var_dump($evilDeadR);
 
 // Nuovo oggetto  Movie 1
 $interviewVampire = new Movie('Interview with the Vampire');
@@ -61,4 +61,45 @@ $interviewVampire->year = 1994;
 $interviewVampire->addGenre('Drama');
 $interviewVampire->addGenre('Horror');
 
-var_dump($interviewVampire);
+// var_dump($interviewVampire);
+
+$movieList = [];
+array_push($movieList, $evilDeadR, $interviewVampire);
+// var_dump($movieList)
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP OOP 1</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row flex-row my-3">
+
+            <?php foreach ($movieList as $movie) : ?>
+                <div class="col-6">
+                    <div class="card">
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h5 class="card-title mb-3"><?= $movie->title ?></h5>
+                            <p class="mb-1"><strong>Anno: </strong><?= $movie->year ?></p>
+                            <p class="mb-1"><strong>Genere: </strong><?= implode(", ", $movie->genre) ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
